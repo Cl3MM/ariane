@@ -1,0 +1,23 @@
+<div class="row">
+  <ul class="nav nav-pills">
+    <% Category.all.each do |category|  %>
+      <li <%= raw('class="active"') if @category.id == category.id %> >
+        <%= link_to category.name, category_path(category) %>
+      </li>
+    <% end -%>
+  </ul>
+</div>
+
+<div class="row">
+  <!-- <img src="http://placehold.it/170x124" alt=""> -->
+  <ul class="thumbnails">
+    <% @models.each do |model| %>
+      <li class="span2">
+        <%= link_to "", category_model_path(model) %>
+        <a href="#" class="thumbnail">
+          <img src="http://placehold.it/170x124" alt="">
+        </a>
+      </li>
+    <% end -%>
+  </ul>
+</div>

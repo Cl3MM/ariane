@@ -1,0 +1,28 @@
+<h1>Models</h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Category</th>
+      <th>Created at</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @models.each do |model| %>
+      <tr>
+        <td><%= model.id %></td>
+        <td><%= link_to model.name, administration_model_path(model) %></td>
+        <td><%= model.category.name %></td>
+        <td><%= model.created_at %></td>
+        <td>
+          <%= link_to 'Edit', edit_administration_model_path(model), :class => 'btn btn-mini' %>
+          <%= link_to 'Destroy', administration_model_path(model), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'New', new_administration_model_path, :class => 'btn btn-primary' %>

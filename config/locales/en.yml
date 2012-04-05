@@ -2,4 +2,23 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+  activerecord:
+    attributes:
+      model:
+        name: "Name"
+  models:
+    index:
+      model: "Model"
+  administration:
+    categories:
+      index:
+        title: "Categories"
+        ID: "ID"
+        name: "Name"
+        created_at: "Created at"
+        actions: "Actions"
+  layouts:
+    navbar:
+      portfolio: "Portfolio"
+      mgm_models: "Manage Models"
+      mgm_categories: "Manage Categories"

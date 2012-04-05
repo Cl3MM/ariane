@@ -1,0 +1,13 @@
+<%= simple_form_for @model, :html => { :class => 'form-horizontal' } do |f| %>
+  <fieldset>
+    <legend><%= controller.action_name.capitalize %> <%= t ".model" %></legend>
+
+    <%= f.input :name %>
+    <%#= f.input :category, :collection => Category.all, :prompt => "Choose a category" %>
+    <%= f.association :category %>
+    <div class="form-actions">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to 'Cancel', models_path, :class => 'btn' %>
+    </div>
+  </fieldset>
+<% end %>

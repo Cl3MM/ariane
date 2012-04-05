@@ -1,7 +1,17 @@
 Ariane::Application.routes.draw do
+  namespace :administration do
+    resources :categories, :models, :photos
+  end
+
+  resources :categories
+
+  resources :models do
+    resources :photos
+  end
+
   devise_for :users
 
-  root :to => 'users#index'
+  root :to => 'categories#index'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

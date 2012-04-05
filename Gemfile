@@ -2,6 +2,9 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.3'
 gem 'devise'
+gem 'simple_form'
+gem 'pry', :group => :development
+gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
