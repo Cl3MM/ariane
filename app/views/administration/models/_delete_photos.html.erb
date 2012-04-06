@@ -1,0 +1,10 @@
+<div class="well">
+  <div class="btn-group">
+    <%= button_tag t(".btn_select"), :class => 'btn' %>
+    <%= button_tag t(".btn_unselect"), :class => 'btn' %>
+    <%= button_tag t(".btn_delete"), :confirm => t(".confirm"), :class => 'btn btn-danger' %>
+  </div>
+  <%= form_tag request.url, :method => "GET" do %>
+      <%= select_tag "photos[]", "ret"  %>
+  <% end -%>
+</div>

@@ -1,7 +1,8 @@
 class Photo < ActiveRecord::Base
-  has_attached_file :image, :styles => { :medium => "313x450>", :thumb => "119x170>" },
-
-               :path => ":rails_root/public/system/:id/:style/:basename.:extension"
+  has_attached_file :image, :styles => { :medium => "313x450>", :thumb => "119x170>" }
+               # ,
+               #:url => ":rails_root/public/system/:id/:style/:basename.:extension",
+               #:path => ":rails_root/public/system/:id/:style/:basename.:extension"
 
   validates_attachment_size :image, :less_than => 10.megabytes
   validates_attachment_presence :image

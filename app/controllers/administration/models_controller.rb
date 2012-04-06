@@ -14,6 +14,7 @@ class Administration::ModelsController < ApplicationController
   # GET /models/1.json
   def show
     @model = Model.find(params[:id])
+    @photos = @model.photos.paginate(:page => params[:page], :per_page => 10)
     @photo = Photo.new
     respond_to do |format|
       format.html # show.html.erb

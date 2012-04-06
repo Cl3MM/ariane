@@ -1,0 +1,42 @@
+    <% form_tag request.url, :method => :get do %>
+      <% select_tag "photos[]", "ret"  %>
+    <% end -%>
+<%= form_tag delete_photos_path do %>
+
+  <%# = render :partial => 'delete_photos' %>
+  <div class="well">
+    <div class="btn-group">
+      <%= button_tag t(".btn_select"), :class => 'btn' %>
+      <%= button_tag t(".btn_unselect"), :class => 'btn' %>
+      <%= button_tag t(".btn_delete"), :confirm => t(".confirm"), :class => 'btn btn-danger' %>
+    </div>
+  </div>
+
+  <%= will_paginate @photos %>
+
+  <%= hidden_field_tag :model_id, @model.id %>
+  <ul class="thumbnails">
+    <% @photos.each do |photo| %>
+      <li class="span2">
+
+        <%#= link_to image_tag("http://placehold.it/170x124", :alt => photo.image_file_name), "", :class => "thumbnail" %>
+        <%= link_to image_tag(photo.image.url(:medium), :alt => photo.image_file_name), "", :class => "thumbnail" %>
+        <div class="caption">
+          <p style="text-align: center;">
+            <label class="checkbox">
+              <%= check_box_tag "photos[]", photo.id  %>
+            </label>
+            <%= link_to photo.image_file_name, "" %>
+            <span rel="tooltip" title="Crée <%= I18n.localize(photo.created_at, :format => "le %d %B %Y à %H:%M:%S") %>">
+              Il y a <%= distance_of_time_in_words_to_now photo.created_at %>
+          </span>
+        </td>
+        <td><%= number_to_human_size photo.image_file_size %></td>
+      </p>
+
+    </div>
+  </li>
+<% end -%>
+  </ul>
+<% end -%>
+

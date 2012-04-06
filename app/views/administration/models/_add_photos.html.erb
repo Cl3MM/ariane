@@ -1,0 +1,7 @@
+<%= form_for [:administration, @photo], :html => { :class => 'well form-inline', :multipart => true } do |f| %>
+  <span class="large"><strong><%= t ".add-file" %> </strong></span>
+  <%= f.hidden_field :model_id, :value => @model.id %>
+  <%= f.file_field :image, :label => "test" %>
+  <span class="help-inline">&nbsp;</span>
+  <%= f.submit t(".btn_upload"), :class => 'btn btn-primary' %>
+<% end %>

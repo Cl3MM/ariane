@@ -10,7 +10,11 @@
 <ul class="thumbnails">
   <% @models.each do |model| %>
     <li class="span2">
-      <%= link_to image_tag("http://placehold.it/119x170", :alt => model.name), model_path(model), :class => "thumbnail width_119" %>
+      <% if model.photos.size > 0 %>
+        <%= link_to image_tag(model.photos.first.image.url(:medium), :alt => model.photos.first.image_file_name), model_path(model), :class => "thumbnail width_119" %>
+      <% else %>
+        <%= link_to image_tag("http://placehold.it/119x170", :alt => model.name), model_path(model), :class => "thumbnail width_119" %>
+      <% end -%>
       <div class="caption width_119">
         <p style="text-align: center;"><%= link_to model.name, model_path(model) %></p>
       </div>

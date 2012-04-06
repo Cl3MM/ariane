@@ -1,44 +1,13 @@
 <div class="page-header">
   <h1><%= @model.name %></h1>
 </div>
-<%= form_for [:administration, @photo], :html => { :class => 'well form-inline', :multipart => true } do |f| %>
-  <span class="large"><strong><%= t ".add-file" %> </strong></span>
-  <%= f.hidden_field :model_id, :value => @model.id %>
-  <%= f.file_field :image, :label => "test" %>
-  <span class="help-inline">&nbsp;</span>
-  <%= f.submit t(".btn_upload"), :class => 'btn btn-primary' %>
-  <%#= link_to 'Cancel', administration_models_path, :class => 'btn' %>
-<% end %>
+
+<%= render :partial => 'add_photos' %>
 
 <% if @model.photos.empty? %>
   <p><%= t ".no-photo" %></p>
 <% else %>
-
- <%= form_tag delete_photos_path do %>
-     <div class="well">
-      <div class="btn-group">
-      <%= button_tag t(".btn_select"), :class => 'btn' %>
-      <%= button_tag t(".btn_unselect"), :class => 'btn' %>
-      <%= button_tag t(".btn_delete"), :confirm => t(".confirm"), :class => 'btn btn-danger' %>
-    </div>
-    </div>
-    <%= hidden_field_tag :model_id, @model.id %>
-    <ul class="thumbnails">
-      <% @model.photos.each do |photo| %>
-        <li class="span2">
-          <%= link_to image_tag("http://placehold.it/170x124", :alt => photo.image_file_name), "", :class => "thumbnail" %>
-          <div class="caption">
-            <p style="text-align: center;">
-              <label class="checkbox">
-                <%= check_box_tag "photos[]", photo.id  %>
-              </label>
-              <%= link_to photo.image_file_name, "" %>
-            </p>
-          </div>
-        </li>
-      <% end -%>
-    </ul>
-  <% end -%>
+  <%= render :partial => 'display_photos' %>
 <% end -%>
 
 <div class="form-actions">
