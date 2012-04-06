@@ -1,23 +1,19 @@
-<div class="row">
-  <ul class="nav nav-pills">
-    <% Category.all.each do |category|  %>
-      <li <%= raw('class="active"') if @category.id == category.id %> >
-        <%= link_to category.name, category_path(category) %>
-      </li>
-    <% end -%>
-  </ul>
-</div>
-
-<div class="row">
-  <!-- <img src="http://placehold.it/170x124" alt=""> -->
-  <ul class="thumbnails">
-    <% @models.each do |model| %>
-      <li class="span2">
-        <%= link_to image_tag("http://placehold.it/170x124", :alt => model.name), model_path(model), :class => "thumbnail" %>
-        <div class="caption">
-          <p style="text-align: center;"><%= link_to model.name, model_path(model) %></p>
-        </div>
-      </li>
-    <% end -%>
-  </ul>
-</div>
+<ul class="nav nav-pills">
+  <% Category.all.each do |category|  %>
+    <li <%= raw('class="active"') if @category.id == category.id %> >
+      <%= link_to category.name, category_path(category) %>
+    </li>
+  <% end -%>
+</ul>
+<hr />
+<!-- <img src="http://placehold.it/170x124" alt=""> -->
+<ul class="thumbnails">
+  <% @models.each do |model| %>
+    <li class="span2">
+      <%= link_to image_tag("http://placehold.it/119x170", :alt => model.name), model_path(model), :class => "thumbnail width_119" %>
+      <div class="caption width_119">
+        <p style="text-align: center;"><%= link_to model.name, model_path(model) %></p>
+      </div>
+    </li>
+  <% end -%>
+</ul>

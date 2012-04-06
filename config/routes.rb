@@ -1,6 +1,9 @@
 Ariane::Application.routes.draw do
+
   namespace :administration do
-    resources :categories, :models, :photos
+    resources :categories
+    resources :models
+    resources :photos
   end
 
   resources :categories
@@ -8,6 +11,8 @@ Ariane::Application.routes.draw do
   resources :models do
     resources :photos
   end
+
+  match 'administration/photos/delete' => 'administration/photos#batch_destroy', :as => :delete_photos
 
   devise_for :users
 

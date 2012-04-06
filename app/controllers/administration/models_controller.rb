@@ -14,7 +14,7 @@ class Administration::ModelsController < ApplicationController
   # GET /models/1.json
   def show
     @model = Model.find(params[:id])
-
+    @photo = Photo.new
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @model }
@@ -58,7 +58,7 @@ class Administration::ModelsController < ApplicationController
   # PUT /models/1.json
   def update
     @model = Model.find(params[:id])
-
+    binding.pry
     respond_to do |format|
       if @model.update_attributes(params[:model])
         format.html { redirect_to [:administration, @model], notice: 'Model was successfully updated.' }
