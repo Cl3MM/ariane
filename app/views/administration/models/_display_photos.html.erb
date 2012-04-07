@@ -6,8 +6,7 @@
   <%# = render :partial => 'delete_photos' %>
   <div class="well">
     <div class="btn-group">
-      <%= button_tag t(".btn_select"), :class => 'btn' %>
-      <%= button_tag t(".btn_unselect"), :class => 'btn' %>
+      <%= button_to_function t(".btn_select"), "selectAll()", :class => 'btn', :id => "select_button" %>
       <%= button_tag t(".btn_delete"), :confirm => t(".confirm"), :class => 'btn btn-danger' %>
     </div>
   </div>
@@ -20,7 +19,7 @@
       <li class="span2">
 
         <%#= link_to image_tag("http://placehold.it/170x124", :alt => photo.image_file_name), "", :class => "thumbnail" %>
-        <%= link_to image_tag(photo.image.url(:medium), :alt => photo.image_file_name), "", :class => "thumbnail" %>
+        <%= link_to image_tag(photo.image.url(:medium), :alt => photo.image_file_name, :class => "height_106"), "", :class => "thumbnail fixed_proportions" %>
         <div class="caption">
           <p style="text-align: center;">
             <label class="checkbox">

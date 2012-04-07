@@ -1,5 +1,9 @@
 Ariane::Application.routes.draw do
 
+  get "slideshow/show"
+
+  get "slideshow/index"
+
   namespace :administration do
     resources :categories
     resources :models
