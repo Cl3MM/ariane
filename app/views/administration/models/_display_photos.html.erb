@@ -14,7 +14,7 @@
   <%= will_paginate @photos %>
 
   <%= hidden_field_tag :model_id, @model.id %>
-  <ul class="thumbnails" style="text-align: center !important; width: auto;">
+  <ul class="thumbnails">
     <% @photos.each do |photo| %>
       <li class="span2">
 
