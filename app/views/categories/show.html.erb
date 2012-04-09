@@ -9,6 +9,8 @@
 </div>
 <hr />
 <!-- <img src="http://placehold.it/170x124" alt=""> -->
+
+<%= will_paginate @models %>
 <ul class="thumbnails">
   <% @models.each do |model| %>
     <li class="span2">
@@ -23,3 +25,4 @@
     </li>
   <% end -%>
 </ul>
+<%= will_paginate @models %>
