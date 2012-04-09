@@ -4,8 +4,8 @@ class Photo < ActiveRecord::Base
                #:url => ":rails_root/public/system/:id/:style/:basename.:extension",
                #:path => ":rails_root/public/system/:id/:style/:basename.:extension"
   has_attached_file :image,
-                    :styles => { :cover => ["119x170#", :jpg], :thumb => ["90x60#", :jpg], :medium => ["x79", :jpg],  },
-                    :convert_options => {:medium => "-resize x79"},
+                    :styles => { :cover => ["119x170#", :jpg], :thumb => ["90x60#", :jpg], :medium => ["x106", :jpg],  },
+                    :convert_options => {:medium => "-resize x106"},
       #:path => ":rails_root/public/system/:id/:style/:basename.:extension"
       :path => ":rails_root/public/:attachment/:id/:style/:basename.:extension",
       :url => "/:attachment/:id/:style/:basename.:extension"

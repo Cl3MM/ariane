@@ -1,27 +1,38 @@
 @import "twitter/bootstrap/bootstrap";
 body { padding-top: 60px; }
 
-
-
 .center { text-align: center !important; }
 
-.caption { padding-top: 0.4em !important; }
+.valign-bottom {vertical-align: 0px !important;}
 
+.justify { text-align: justify !important; }
+/*
+.caption { padding-top: 0.4em !important; }
+*/
 .large { font-size: 140% !important; padding-right: 1.5em !important; vertical-align: text-bottom !important; }
 
-.width_119 {width: 119px !important; }
+.width_119 {width: 119px !important; max-width: 119px !important; }
 
 .height_106 { max-height: 79px !important; height: 79px !important; }
 
-.fixed_proportions {
-  /* min-width: 100% !important;
-*/  
-}
+.fixed-proportions {max-width: 100px !important;}
 
 .ad-gallery {
   width: 930px !important;
   margin-left: 20px !important;
 }
+/*
+* { margin: 0; }
+html, body { height: 100%; }
+
+.wrapper {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -4em;
+}
+.footer, .push { height: 4em; }
+*/
 
 @import "twitter/bootstrap/responsive";
 
@@ -39,3 +50,43 @@ body { padding-top: 60px; }
 //
 // Example:
 // @linkColor: #ff0000;
+
+
+@navbarBackground: #1F4C80;
+@navbarBackgroundHighlight: #6797CF;
+@navbarLinkColor: @white;
+
+@navbarLinkColorHover: @infoBackground;
+@navbarText: @white;
+/*
+.brand {
+*/
+/*  color: darken(@linkColor, 15%) !important; 
+  font-weight: 900 !important;
+}
+
+.nav-tabs li, .nav-pills li {
+    float:none !important;
+    display:inline-block !important;
+    *display:inline !important; /* ie7 fix */
+/*     zoom:1 !important; /* hasLayout ie7 trigger */
+/*
+}
+.nav-tabs {
+    text-align:center !important;
+}
+*/
+
+.central-nav {
+  text-align: center;
+  margin-bottom:0px;
+  width: auto;
+  margin-left: -20px
+}
+
+.central-nav .nav-pills {
+  margin-bottom:0px;
+  display:inline-block;
+  zoom:1;
+  *display: inline;
+}

@@ -1,4 +1,5 @@
 class Administration::ModelsController < ApplicationController
+  before_filter :authenticate_user!
   # GET /models
   # GET /models.json
   def index

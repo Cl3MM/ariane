@@ -1,4 +1,11 @@
 class ModelsController < ApplicationController
+
+  def slideshow
+    @model = Model.find_by_id(params[:id])
+    @photos = @model.photos
+    @category = Category.find_by_id(@model.category_id)
+  end
+
   # GET /models
   # GET /models.json
   def index

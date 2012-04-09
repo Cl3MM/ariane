@@ -1,39 +1,8 @@
-<!---------------
-  <div id="container">
-    <div id="gallery" class="ad-gallery">
-      <div class="ad-image-wrapper">
-      </div>
-      <div class="ad-controls">
-      </div>
-      <div class="ad-nav">
-        <div class="ad-thumbs">
-          <ul class="ad-thumb-list">
-            <li>
-              <a href="/assets/images/1.jpg">
-                <img src="/assets/images/thumbs/t1.jpg" class="image0">
-              </a>
-            </li>
-            <% loops = 2 %>
-            <% 11.times do %>
-            <li>
-              <a href="/assets/images/<%= loops += 1 %>.jpg">
-                <img src="/assets/images/thumbs/t<%= loops %>.jpg" title="A title for 10.jpg" alt="This is a nice, and incredibly descriptive, description of the image 10.jpg" class="image1">
-              </a>
-            </li>
-            <% end -%>
-            <li>
-              <a href="/assets/images/11.jpg">
-                <img src="/assets/images/thumbs/t11.jpg" title="A title for 11.jpg" longdesc="http://coffeescripter.com" alt="This is a nice, and incredibly descriptive, description of the image 11.jpg" class="image2">
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
--------------->
-
-
+<div class="page-header">
+  <h2>
+    <%= @model.name %>
+  </h2>
+</div>
 <%= render :partial => 'add_photos' %>
 
 <%#= image_tag(@model.photos.first.image.url(:thumb), :alt => "test") %>

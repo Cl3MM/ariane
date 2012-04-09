@@ -1,6 +1,6 @@
-    <% form_tag request.url, :method => :get do %>
-      <% select_tag "photos[]", "ret"  %>
-    <% end -%>
+<% form_tag request.url, :method => :get do %>
+  <% select_tag "photos[]", "ret"  %>
+<% end -%>
 <%= form_tag delete_photos_path do %>
 
   <%# = render :partial => 'delete_photos' %>
@@ -14,28 +14,33 @@
   <%= will_paginate @photos %>
 
   <%= hidden_field_tag :model_id, @model.id %>
-  <ul class="thumbnails">
+  <ul class="thumbnails" style="text-align: center !important; width: auto;">
     <% @photos.each do |photo| %>
       <li class="span2">
 
-        <%#= link_to image_tag("http://placehold.it/170x124", :alt => photo.image_file_name), "", :class => "thumbnail" %>
-        <%= link_to image_tag(photo.image.url(:medium), :alt => photo.image_file_name, :class => "height_106"), "", :class => "thumbnail fixed_proportions" %>
-        <div class="caption">
-          <p style="text-align: center;">
-            <label class="checkbox">
-              <%= check_box_tag "photos[]", photo.id  %>
-            </label>
-            <%= link_to photo.image_file_name, "" %>
-            <span rel="tooltip" title="Crée <%= I18n.localize(photo.created_at, :format => "le %d %B %Y à %H:%M:%S") %>">
-              Il y a <%= distance_of_time_in_words_to_now photo.created_at %>
-          </span>
-        </td>
-        <td><%= number_to_human_size photo.image_file_size %></td>
+        <div class="thumbnail width_119">
+          <%#= link_to image_tag("http://placehold.it/170x124", :alt => photo.image_file_name), "", :class => "thumbnail" %>
+          <%= link_to image_tag(photo.image.url(:cover), :alt => photo.image_file_name), slideshow_url(@model.id)%>
+          <%#= link_to image_tag(photo.image.url(:medium), :alt => photo.image_file_name, :class => "height_106_"), slideshow_url(@model.id), :class => "thumbnail fixed-proportions_" %>
+          <div class="caption">
+              <%= check_box_tag "photos[]", photo.id, :class => "valign-bottom" %>
+              <%= photo.image_file_name %>
+              <%= number_to_human_size photo.image_file_size %>
+          </div>
+        </div>
+        <!--
+        <p style="text-align: center;">
+          <label class="checkbox">
+            <%= check_box_tag "photos[]", photo.id  %>
+          </label>
+          <%= link_to photo.image_file_name, "" %>
+          <span rel="tooltip" title="Crée <%= I18n.localize(photo.created_at, :format => "le %d %B %Y à %H:%M:%S") %>">
+            Il y a <%= distance_of_time_in_words_to_now photo.created_at %>
+        </span>
+        <span><%= number_to_human_size photo.image_file_size %></span>
       </p>
-
-    </div>
-  </li>
+      -->
+    </li>
+  <% end -%>
+</ul>
 <% end -%>
-  </ul>
-<% end -%>
-

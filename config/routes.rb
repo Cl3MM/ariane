@@ -1,8 +1,6 @@
 Ariane::Application.routes.draw do
 
-  get "slideshow/show"
-
-  get "slideshow/index"
+  #get "slideshow/index"
 
   namespace :administration do
     resources :categories
@@ -17,8 +15,19 @@ Ariane::Application.routes.draw do
   end
 
   match 'administration/photos/delete' => 'administration/photos#batch_destroy', :as => :delete_photos
+  match 'models/:id/slideshow' => 'models#slideshow', :as => :slideshow
 
-  devise_for :users
+  devise_scope :user do
+    get "login", :to => "devise/sessions#new"
+    get "administration/login", :to => "devise/sessions#new"
+    get "administration/signup", :to => "devise/registrations#new"
+  end
+
+  devise_for :users, :path_names => {
+    :sign_in => 'login',
+    :sign_out => 'logout',
+    :sign_up => 'signup' }
+
 
   root :to => 'categories#index'
   # The priority is based upon order of creation:
