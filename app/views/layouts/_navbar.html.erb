@@ -21,7 +21,7 @@
               <a href="#"
                 class="dropdown-toggle"
                 data-toggle="dropdown">
-                Welcome <%= current_user.email %> !
+                <%= current_user.email.downcase %>
                 <b class="caret"></b>
               </a>
 
