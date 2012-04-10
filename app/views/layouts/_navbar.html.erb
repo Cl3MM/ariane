@@ -30,6 +30,7 @@
               %>
             <ul class="dropdown-menu">
               <li><%= link_to t(".mgm_categories"), administration_categories_path %></li>
+              <li><%= link_to t(".mgm_colors"), administration_colors_path %></li>
               <li><%= link_to t(".mgm_models"), administration_models_path %></li>
               <li class="divider"></li>
               <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>

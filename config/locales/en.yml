@@ -2,6 +2,8 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
+  hair_color_id: "Hair"
+  eyes_color_id: "Eyes"
   delete: "Delete"
   back: "Back"
   edit: "Edit"
@@ -22,15 +24,15 @@ en:
         created_at: "Created at"
         actions: "Actions"
     models:
-      show:
-        no-photo: "There is no photos"
-        confirm_model_del: "Are you sure you want to delete the model %{model}?"
       add_photos:
         add-file: "Upload a new photo"
         btn_upload: "Upload"
         btn: "false"
       display_photos:
+      show:
         confirm: "Are you sure you want to delete the selected files?"
+        no-photo: "There is no photos"
+        confirm_model_del: "Are you sure you want to delete the model %{model}?"
         btn_select: "Select All"
         btn_unselect: "Unselect All"
         btn_delete: "Delete selected files"
@@ -41,6 +43,7 @@ en:
     navbar:
       portfolio: "Portfolio"
       mgm_models: "Manage Models"
+      mgm_colors: "Manage colors"
       mgm_categories: "Manage Categories"
       err: "Model was successfully created."
   photo_create_success: 'Photo was successfully created.'

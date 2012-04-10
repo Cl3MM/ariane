@@ -1,0 +1,17 @@
+<%= form_for [:administration, @color], :html => { :class => 'form-horizontal' } do |f| %>
+  <fieldset>
+    <legend>Color</legend>
+
+    <div class="control-group">
+      <%= f.label :name, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :name, :class => 'text_field' %>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to 'Cancel', administration_colors_path, :class => 'btn' %>
+    </div>
+  </fieldset>
+<% end %>

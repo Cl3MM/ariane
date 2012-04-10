@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'will_paginate', '~> 3.0'
 gem 'bootstrap-will_paginate'
 gem "high_voltage"
+gem 'mercury-rails'
 
 gem 'rails', '3.2.3'
 gem 'devise'

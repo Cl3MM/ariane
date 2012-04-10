@@ -1,0 +1,14 @@
+<div class="page-header">
+  <h1>/Color</h1>
+</div>
+
+<p>
+  <b>Name</b><br>
+  <%= @color.name %>
+</p>
+
+<div class="form-actions">
+  <%= link_to 'Back', administration_colors_path, :class => 'btn'  %>
+  <%= link_to 'Edit', edit_administration_color_path(@color), :class => 'btn' %>
+  <%= link_to 'Delete', administration_color_path(@color), :method => 'delete', :confirm => 'Are you sure?', :class => 'btn btn-danger' %>
+</div>

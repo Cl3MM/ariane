@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120410025518) do
+ActiveRecord::Schema.define(:version => 20120410194711) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -21,6 +21,12 @@ ActiveRecord::Schema.define(:version => 20120410025518) do
   end
 
   add_index "categories", ["slug"], :name => "index_categories_on_slug"
+
+  create_table "colors", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "friendly_id_slugs", :force => true do |t|
     t.string   "slug",                         :null => false
@@ -33,12 +39,31 @@ ActiveRecord::Schema.define(:version => 20120410025518) do
   add_index "friendly_id_slugs", ["sluggable_id"], :name => "index_friendly_id_slugs_on_sluggable_id"
   add_index "friendly_id_slugs", ["sluggable_type"], :name => "index_friendly_id_slugs_on_sluggable_type"
 
+  create_table "mercury_images", :force => true do |t|
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+  end
+
   create_table "models", :force => true do |t|
     t.string   "name"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
     t.integer  "category_id"
     t.string   "slug"
+    t.string   "height"
+    t.string   "suit"
+    t.string   "neck"
+    t.string   "shoe"
+    t.string   "waist"
+    t.string   "size"
+    t.string   "bust"
+    t.string   "hips"
+    t.integer  "hair_color_id"
+    t.integer  "eyes_color_id"
   end
 
   add_index "models", ["slug"], :name => "index_models_on_slug"

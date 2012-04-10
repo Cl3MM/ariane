@@ -18,7 +18,7 @@ class CategoriesController < ApplicationController
     if @category.name.upcase == "NEW FACES"
       @models = Model.order("id DESC").paginate(:page => params[:page], :per_page => 10)
     else
-      @models = @category.models.paginate(:page => params[:page], :per_page => 10)
+      @models = @category.models.order(:name).paginate(:page => params[:page], :per_page => 10)
     end
     if request.path != category_path(@category)
       redirect_to @category, status: :moved_permanently

@@ -1,3 +1,6 @@
+<% css 'jquery.ad-gallery.css' %>
+<% javascript 'ad_gallery.js', 'jquery.ad-gallery.js', 'jquery.ad-gallery.pack.js' %>
+
 <div class="central-nav">
   <ul class="nav nav-pills">
     <% Category.all.each do |category|  %>
@@ -8,18 +11,7 @@
   </ul>
 </div>
 <hr />
-<h3 class="center"><%= @model.name %>: 
-  <small>
-    height  5'10" |
-    size  2 us |
-    shoe  10 us |
-    hair  dark brown |
-    eyes  blue |
-    waist  24" |
-    bust  32" |
-    hips  34"
-  </small>
-</h3>
+<%= model_info @model %>
 <hr />
 <% if @photos.empty? %>
   <div class="hero-unit">
@@ -41,9 +33,9 @@
             <li>
               <a href="<%= photo.image.url %>">
                 <%= image_tag photo.image.url(:thumb), :class => "image#{index}",
-                  :title => "A title for 10.jpg",
-                  :longdesc => "http://coffeescripter.com",
-                  :alt => "This is a nice, and incredibly descriptive, description of the image 10.jpg" %>
+                  :title => "",
+                  :longdesc => "",
+                  :alt => "" %>
               </a>
             </li>
           <% end -%>

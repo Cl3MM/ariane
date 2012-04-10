@@ -4,12 +4,16 @@
     <title>Ariane</title>
     <%= stylesheet_link_tag    "application", :media => "all" %>
     <%= javascript_include_tag "application" %>
+    <% if controller.class.name == "PagesController" %>
+      <% javascript 'mercury.js' %>
+      <% css 'mercury_overrides.css' %>
+    <% end -%>
+    <%= yield(:head) %>
     <%= csrf_meta_tags %>
   </head>
   <body>
     <%= render :partial => 'layouts/navbar' %>
-    <div class="container" role=>
-
+    <div class="container">
       <% flash.each do |name, msg| %>
         <div class="row">
           <div class="span10 offset1">
@@ -20,7 +24,6 @@
           </div>
         </div>
       <% end %>
-
       <div class="row">
         <div class="span10 offset1">
           <%= yield %>
@@ -29,4 +32,3 @@
     </div>
   </body>
 </html>
-

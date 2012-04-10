@@ -5,6 +5,16 @@
     <%= f.input :name %>
     <%#= f.input :category, :collection => Category.all, :prompt => "Choose a category" %>
     <%= f.association :category %>
+    <%= f.association :hair_color %>
+    <%= f.association :eyes_color %>
+    <%= f.input :height %>
+    <%= f.input :suit %>
+    <%= f.input :neck %>
+    <%= f.input :shoe %>
+    <%= f.input :waist %>
+    <%= f.input :size %>
+    <%= f.input :bust %>
+    <%= f.input :hips %>
 
     <div class="form-actions">
       <%= f.submit nil, :class => 'btn btn-primary' %>

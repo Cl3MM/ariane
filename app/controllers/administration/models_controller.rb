@@ -3,7 +3,7 @@ class Administration::ModelsController < ApplicationController
   # GET /models
   # GET /models.json
   def index
-    @models = Model.paginate(:page => params[:page], :per_page => 10)
+    @models = Model.order(:name).paginate(:page => params[:page], :per_page => 10)
 
     respond_to do |format|
       format.html # index.html.erb
