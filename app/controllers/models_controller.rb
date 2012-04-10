@@ -1,7 +1,7 @@
 class ModelsController < ApplicationController
 
   def slideshow
-    @model = Model.find_by_id(params[:id])
+    @model = Model.find(params[:name])
     @photos = @model.photos
     @category = Category.find_by_id(@model.category_id)
   end

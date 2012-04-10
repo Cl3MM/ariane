@@ -15,7 +15,7 @@ Ariane::Application.routes.draw do
   end
 
   match 'administration/photos/delete' => 'administration/photos#batch_destroy', :as => :delete_photos
-  match 'models/:id/slideshow' => 'models#slideshow', :as => :slideshow
+  match 'models/:name/slideshow' => 'models#slideshow', :as => :slideshow
 
   devise_scope :user do
     get "login", :to => "devise/sessions#new"
