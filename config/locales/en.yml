@@ -43,7 +43,7 @@ en:
     navbar:
       portfolio: "Portfolio"
       mgm_models: "Manage Models"
-      mgm_colors: "Manage colors"
+      mgm_colors: "Manage Colors"
       mgm_categories: "Manage Categories"
       err: "Model was successfully created."
   photo_create_success: 'Photo was successfully created.'
