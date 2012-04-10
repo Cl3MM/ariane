@@ -15,7 +15,12 @@ class CategoriesController < ApplicationController
   # GET /categories/1.json
   def show
     @category = Category.find(params[:id])
-    @models = @category.models.paginate(:page => params[:page], :per_page => 10)
+    if @category.name.upcase == "NEW FACES"
+      @models = Model.order("id DESC").paginate(:page => params[:page], :per_page => 10)
+    else
+      @models = @category.models.paginate(:page => params[:page], :per_page => 10)
+    end
+
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @category }

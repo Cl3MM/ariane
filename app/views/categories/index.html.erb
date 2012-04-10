@@ -9,18 +9,27 @@
 </div>
 
 <hr />
-<ul class="thumbnails">
-  <% @models.each do |model| %>
-    <li class="span2">
-      <% if model.photos.size > 0 %>
-        <%= link_to image_tag(model.photos.first.image.url(:cover), :alt => model.photos.first.image_file_name), slideshow_url(model), :class => "thumbnail width_119" %>
-      <% else %>
-        <%= link_to image_tag("http://placehold.it/119x170", :alt => model.name), model_path(model), :class => "thumbnail width_119" %>
-      <% end -%>
-      <div class="caption width_119">
-        <p style="text-align: center;"><%= link_to model.name, model_path(model) %></p>
-      </div>
-    </li>
-  <% end -%>
-</ul>
-<%= will_paginate @models %>
+<% if @models.nil? %>
+  <div class="hero-unit">
+    <h2>Sorry, no photos yet :(</h2>
+    <hr />
+    <p>This model does not have any photos yet. </p>
+    <p>Please try again later, or <%= mail_to "contact@ariane.rw", "contact the administrator" %> if you still encounter this issue.</p>
+  </div>
+<% else %>
+  <ul class="thumbnails">
+    <% @models.each do |model| %>
+      <li class="span2">
+        <% if model.photos.size > 0 %>
+          <%= link_to image_tag(model.photos.first.image.url(:cover), :alt => model.photos.first.image_file_name), slideshow_url(model), :class => "thumbnail width_119" %>
+        <% else %>
+          <%= link_to image_tag("http://placehold.it/119x170", :alt => model.name), model_path(model), :class => "thumbnail width_119" %>
+        <% end -%>
+        <div class="caption width_119">
+          <p style="text-align: center;"><%= link_to model.name, model_path(model) %></p>
+        </div>
+      </li>
+    <% end -%>
+  </ul>
+  <%= will_paginate @models %>
+<% end -%>

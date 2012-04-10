@@ -21,26 +21,33 @@
   </small>
 </h3>
 <hr />
-
-<div id="gallery" class="ad-gallery">
-  <div class="ad-image-wrapper">
+<% if @photos.empty? %>
+  <div class="hero-unit">
+    <h2>Sorry, no photos yet :(</h2>
+    <hr />
+    <p>This models does not have any photos yet. </p>
+    <p>Please try again later, or <%= mail_to "contact@ariane.rw", "contact the administrator" %> if you still encounter this issue.</p>
   </div>
-  <div class="ad-controls">
-  </div>
-  <div class="ad-nav">
-    <div class="ad-thumbs">
-      <ul class="ad-thumb-list">
-        <% @photos.each_with_index do |photo, index| %>
-          <li>
-            <a href="<%= photo.image.url %>">
-              <%= image_tag photo.image.url(:thumb), :class => "image#{index}",
-                :title => "A title for 10.jpg",
-                :longdesc => "http://coffeescripter.com",
-                :alt => "This is a nice, and incredibly descriptive, description of the image 10.jpg" %>
-            </a>
-          </li>
-        <% end -%>
-      </ul>
+<% else %>
+  <div id="gallery" class="ad-gallery">
+    <div class="ad-image-wrapper">
     </div>
-  </div>
-
+    <div class="ad-controls">
+    </div>
+    <div class="ad-nav">
+      <div class="ad-thumbs">
+        <ul class="ad-thumb-list">
+          <% @photos.each_with_index do |photo, index| %>
+            <li>
+              <a href="<%= photo.image.url %>">
+                <%= image_tag photo.image.url(:thumb), :class => "image#{index}",
+                  :title => "A title for 10.jpg",
+                  :longdesc => "http://coffeescripter.com",
+                  :alt => "This is a nice, and incredibly descriptive, description of the image 10.jpg" %>
+              </a>
+            </li>
+          <% end -%>
+        </ul>
+      </div>
+    </div>
+  <% end -%>

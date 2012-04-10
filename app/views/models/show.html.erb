@@ -1,13 +1,22 @@
-<div class="row">
+<div class="central-nav">
   <ul class="nav nav-pills">
     <% Category.all.each do |category|  %>
-      <li <%= raw('class="active"') if @category.id == category.id %> >
+      <li <%=  category.name.upcase == "NEW FACES" ? 'class=active' : "" %>>
         <%= link_to category.name, category_path(category) %>
       </li>
     <% end -%>
   </ul>
 </div>
+<hr />
 
+<% if @models.nil? %>
+  <div class="hero-unit">
+    <h2>Sorry, no photos yet :(</h2>
+    <hr />
+    <p>This model does not have any photos yet. </p>
+    <p>Please try again later, or <%= mail_to "contact@ariane.rw", "contact the administrator" %> if you still encounter this issue.</p>
+  </div>
+<% else %>
 <div class="row">
   <!-- <img src="http://placehold.it/170x124" alt=""> -->
   <ul class="thumbnails">
@@ -21,3 +30,4 @@
     <% end -%>
   </ul>
 </div>
+<% end -%>
