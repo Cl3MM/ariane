@@ -7,12 +7,12 @@ class Photo < ActiveRecord::Base
                     :styles => { :cover => ["119x170#", :jpg], :thumb => ["90x60#", :jpg], :medium => ["x106", :jpg],  },
                     :convert_options => {:medium => "-resize x106"},
       #:path => ":rails_root/public/system/:id/:style/:basename.:extension"
-      :path => ":rails_root/public/:attachment/:id/:style/:basename.:extension",
-      :url => "/:attachment/:id/:style/:basename.:extension"
-      #:path => ":rails_root/public/:attachment/:hash.:extension",
-      #:url => "/:attachment/:hash.:extension"
-      #:hash_data => ":class/:attachment/:id/:style/:updated_at",
-      #:hash_secret => "longSecretStringToChange"
+      #:path => ":rails_root/public/:attachment/:id/:style/:basename.:extension",
+      #:url => "/:attachment/:id/:style/:basename.:extension"
+      :path => ":rails_root/public/:attachment/:hash.:extension",
+      :url => "/:attachment/:hash.:extension",
+      :hash_data => ":class/:attachment/:id/:style/:updated_at",
+      :hash_secret => "longSecretStringToChange"
 
   validates_attachment_size :image, :less_than => 4.megabytes
   validates_attachment_presence :image

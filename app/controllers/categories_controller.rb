@@ -20,6 +20,9 @@ class CategoriesController < ApplicationController
     else
       @models = @category.models.paginate(:page => params[:page], :per_page => 10)
     end
+    if request.path != category_path(@category)
+      redirect_to @category, status: :moved_permanently
+    end
 
     respond_to do |format|
       format.html # show.html.erb

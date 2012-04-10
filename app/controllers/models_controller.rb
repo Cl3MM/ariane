@@ -22,6 +22,9 @@ class ModelsController < ApplicationController
   def show
     @model = Model.find(params[:id])
     @category = @model.category
+    if request.path != model_path(@model)
+      redirect_to @model, status: :moved_permanently
+    end
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @model }

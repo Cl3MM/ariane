@@ -7,4 +7,6 @@ class Model < ActiveRecord::Base
 
   attr_accessible :name, :category_id, :photos_attributes
 
+  extend FriendlyId
+  friendly_id :name, use: [:slugged, :history]
 end
