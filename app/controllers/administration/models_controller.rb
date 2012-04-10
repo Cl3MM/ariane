@@ -61,7 +61,6 @@ class Administration::ModelsController < ApplicationController
   # PUT /models/1.json
   def update
     @model = Model.find(params[:id])
-    binding.pry
     respond_to do |format|
       if @model.update_attributes(params[:model])
         format.html { redirect_to [:administration, @model], notice: 'Model was successfully updated.' }
