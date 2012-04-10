@@ -44,11 +44,11 @@ class Administration::ColorsController < ApplicationController
 
     respond_to do |format|
       if @color.save
-        format.html { redirect_to @color, notice: 'Color was successfully created.' }
-        format.json { render json: @color, status: :created, location: @color }
+        format.html { redirect_to [:administration, @color], notice: 'Color was successfully created.' }
+        format.json { render json: [:administration, @color], status: :created, location: @color }
       else
         format.html { render action: "new" }
-        format.json { render json: @color.errors, status: :unprocessable_entity }
+        format.json { render json: [:administration, @color.errors], status: :unprocessable_entity }
       end
     end
   end
@@ -64,7 +64,7 @@ class Administration::ColorsController < ApplicationController
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
-        format.json { render json: @color.errors, status: :unprocessable_entity }
+        format.json { render json: [:administration, @color.errors], status: :unprocessable_entity }
       end
     end
   end
@@ -76,7 +76,7 @@ class Administration::ColorsController < ApplicationController
     @color.destroy
 
     respond_to do |format|
-      format.html { redirect_to colors_url }
+      format.html { redirect_to administration_colors_url }
       format.json { head :no_content }
     end
   end
