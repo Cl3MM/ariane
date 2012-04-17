@@ -29,13 +29,13 @@ en:
         btn_upload: "Upload"
         btn: "false"
       display_photos:
-      show:
         confirm: "Are you sure you want to delete the selected files?"
-        no-photo: "There is no photos"
-        confirm_model_del: "Are you sure you want to delete the model %{model}?"
         btn_select: "Select All"
         btn_unselect: "Unselect All"
         btn_delete: "Delete selected files"
+      show:
+        confirm_model_del: "Are you sure you want to delete the model %{model}?"
+        no-photo: "There is no photos"
       photos:
         err-form: "Des erreurs ont été rencontré"
 

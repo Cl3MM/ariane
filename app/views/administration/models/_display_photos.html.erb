@@ -1,16 +1,10 @@
-<% form_tag request.url, :method => :get do %>
-  <% select_tag "photos[]", "ret"  %>
-<% end -%>
 <%= form_tag delete_photos_path do %>
-
   <%# = render :partial => 'delete_photos' %>
   <%= will_paginate @photos %>
-
   <%= hidden_field_tag :model_id, @model.id %>
   <ul class="thumbnails">
     <% @photos.each do |photo| %>
       <li class="span2">
-
         <div class="thumbnail width_119">
           <%#= link_to image_tag("http://placehold.it/170x124", :alt => photo.image_file_name), "", :class => "thumbnail" %>
           <%= link_to image_tag(photo.image.url(:cover), :alt => photo.image_file_name), slideshow_url(@model.id)%>
@@ -22,7 +16,6 @@
           </div>
         </div>
         <!--
-          <%= link_to photo.image_file_name, "" %>
           <span rel="tooltip" title="Crée <%= I18n.localize(photo.created_at, :format => "le %d %B %Y à %H:%M:%S") %>">
             Il y a <%= distance_of_time_in_words_to_now photo.created_at %>
           <span><%= number_to_human_size photo.image_file_size %></span>
@@ -31,4 +24,10 @@
     </li>
   <% end -%>
 </ul>
+  <div class="well">
+    <div class="btn-group">
+      <%= button_to_function t(".btn_select"), "selectAll()", :class => 'btn', :id => "select_button" %>
+      <%= button_tag t(".btn_delete"), :confirm => t(".confirm"), :class => 'btn btn-danger' %>
+    </div>
+  </div>
 <% end -%>

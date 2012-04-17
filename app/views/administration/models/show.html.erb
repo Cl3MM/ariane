@@ -1,3 +1,4 @@
+<%= javascript "/assets/generic.js" %>
 <div class="page-header">
   <h2>
     <%= @model.name %>
@@ -13,15 +14,8 @@
 <%#= image_tag(@model.photos.first.image.url(:thumb), :alt => "test") %>
 <%#= image_tag("http://placehold.it/119x170", :alt => "test") %>
 
-
 <% if @model.photos.empty? %>
   <p><%= t ".no-photo" %></p>
 <% else %>
   <%= render :partial => 'display_photos' %>
-  <div class="well">
-    <div class="btn-group">
-      <%= button_to_function t(".btn_select"), "selectAll()", :class => 'btn', :id => "select_button" %>
-      <%= button_tag t(".btn_delete"), :confirm => t(".confirm"), :class => 'btn btn-danger' %>
-    </div>
-  </div>
 <% end -%>
