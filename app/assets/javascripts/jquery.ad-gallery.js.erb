@@ -9,7 +9,7 @@
  */
 (function($) {
   $.fn.adGallery = function(options) {
-    var defaults = { loader_image: "<%= asset_path('loader.gif') %>",
+    var defaults = { loader_image: "/assets/loader.gif",
                      start_at_index: 0,
                      description_wrapper: false,
                      thumb_opacity: 0.7,
@@ -137,7 +137,7 @@
     image_wrapper: false,
     gallery_info: false,
     nav: false,
-    loader: true, //default: false
+    loader: false, //default: false
     preloads: false,
     thumbs_wrapper: false,
     scroll_back: false,
@@ -242,7 +242,8 @@
       this.nav = this.wrapper.find('.ad-nav');
       this.thumbs_wrapper = this.nav.find('.ad-thumbs');
       this.preloads = $('<div class="ad-preloads"></div>');
-      this.loader = $('<%= image_tag asset_path("loader.gif"), :class=>"ad-loader" %>'); // defaults: $('<img class="ad-loader" src="'+ this.settings.loader_image +'">');
+      this.loader = $('<img class="ad-loader" src="/assets/loader.gif">');
+      //this.loader = $('<%= image_tag asset_path("loader.gif"), :class=>"ad-loader" %>'); // defaults: $('<img class="ad-loader" src="'+ this.settings.loader_image +'">');
       this.image_wrapper.append(this.loader);
       this.loader.hide();
       $(document.body).append(this.preloads);
