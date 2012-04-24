@@ -10,17 +10,11 @@
           <%= link_to image_tag(photo.image.url(:cover), :alt => photo.image_file_name), slideshow_url(@model.id)%>
           <%#= link_to image_tag(photo.image.url(:medium), :alt => photo.image_file_name, :class => "height_106_"), slideshow_url(@model.id), :class => "thumbnail fixed-proportions_" %>
           <div class="caption">
-              <%= check_box_tag "photos[]", photo.id, :class => "valign-bottom" %>
+              <%= check_box_tag "photos[]", photo.id, false, :class => "valign-bottom" %>
               <%= photo.image_file_name %>
               <%= number_to_human_size photo.image_file_size %>
           </div>
         </div>
-        <!--
-          <span rel="tooltip" title="Crée <%= I18n.localize(photo.created_at, :format => "le %d %B %Y à %H:%M:%S") %>">
-            Il y a <%= distance_of_time_in_words_to_now photo.created_at %>
-          <span><%= number_to_human_size photo.image_file_size %></span>
-          </p>
-        -->
     </li>
   <% end -%>
 </ul>

@@ -3,5 +3,5 @@
   <%= f.hidden_field :model_id, :value => @model.id %>
   <%= f.file_field :image, :label => "test" %>
   <span class="help-inline">&nbsp;</span>
-  <%= f.submit t(".btn_upload"), :class => 'btn btn-primary' %>
+  <%= f.submit t(".btn_upload"), :class => 'btn btn-primary', :disable_with => "Uploading..." %>
 <% end %>
