@@ -1,14 +1,13 @@
 class Photo < ActiveRecord::Base
 
   has_attached_file :image,
-                    :styles => { :cover => ["119x170", :jpg], :thumb => ["60x40", :jpg],
+                    :styles => { :cover => ["119x170#", :jpg], :thumb => ["60x40", :jpg],
                                  :medium => ["x106", :jpg], :large => ["600x400", :jpg]
                                 },
                     :convert_options => { :medium => "-resize x106",
                                           :large => "-resize 600x400 -background '#eee' \
                                           -gravity center -extent 600x400 -quality 60",
-                                          :cover => "-resize 119x170 -background '#fff' \
-                                          -gravity center -extent 119x170 -quality 60",
+                                          #:cover => "-resize 119x170# -background '#fff'",
                                           :thumb => "-resize 60x40 -background '#fff' \
                                           -gravity center -extent 60x40 -quality 60"
                                         },
@@ -18,7 +17,7 @@ class Photo < ActiveRecord::Base
       :path => ":rails_root/public/:attachment/:hash.:extension",
       :url => "/:attachment/:hash.:extension",
       :hash_data => ":class/:attachment/:id/:style/:updated_at",
-      :hash_secret => "longSecretStringToChange"
+      :hash_secret => "3Y114164bW3347Fz7C4u4SQ86douka"
 
   validates_attachment_size :image, :less_than => 4.megabytes
   validates_attachment_presence :image
