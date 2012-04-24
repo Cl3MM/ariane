@@ -4,12 +4,13 @@ class Photo < ActiveRecord::Base
                     :styles => { :cover => ["119x170#", :jpg], :thumb => ["60x40", :jpg],
                                  :medium => ["x106", :jpg], :large => ["600x400", :jpg]
                                 },
-                    :convert_options => { :medium => "-resize x106",
-                                          :large => "-resize 600x400 -background '#eee' \
-                                          -gravity center -extent 600x400 -quality 60",
-                                          #:cover => "-resize 119x170# -background '#fff'",
-                                          :thumb => "-resize 60x40 -background '#fff' \
-                                          -gravity center -extent 60x40 -quality 60"
+                    :convert_options => { :medium => "-resize 'x106'",
+                                          :large => "-resize '600x400' -background '#eee' \
+                                          -gravity center -extent '600x400' -quality 55",
+                                          :cover => "-resize '119x170' -background '#eee'\
+                                          -gravity center -quality 55",
+                                          :thumb => "-resize '60x40' -background '#eee' \
+                                          -gravity center -extent '60x40' -quality 55"
                                         },
       #:path => ":rails_root/public/system/:id/:style/:basename.:extension"
       #:path => ":rails_root/public/:attachment/:id/:style/:basename.:extension",
