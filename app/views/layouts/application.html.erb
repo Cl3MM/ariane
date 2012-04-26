@@ -5,8 +5,8 @@
     <%= stylesheet_link_tag    "application", :media => "all" %>
     <%= javascript_include_tag "application" %>
     <% if controller.class.name == "PagesController" %>
-      <% javascript 'mercury.js' %>
-      <% css 'mercury_overrides.css' %>
+      <%= javascript_include_tag 'mercury.js' %>
+      <%= stylesheet_link_tag 'mercury_overrides.css' %>
     <% end -%>
     <%= yield(:head) %>
     <%= csrf_meta_tags %>

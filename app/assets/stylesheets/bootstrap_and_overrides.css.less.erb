@@ -1,7 +1,7 @@
 @import "twitter/bootstrap/bootstrap";
 body { padding-top: 60px; }
 
-.bulles { background: url(<%= asset_path "tile.png" %>) top left repeat; }
+.bulles { background: url(<%= asset_path "uburanga_logo.jpg" %>) bottom right no-repeat; }
 
 .center { text-align: center !important; }
 
@@ -43,11 +43,20 @@ body { padding-top: 60px; }
 
 @bleuClair:#1F4C80;
 @bleuFonce: #6797CF;
-@navbarBackground: @bleuClair;
-@navbarBackgroundHighlight:@bleuFonce;
+
+@green1: #006633;
+@green1_lighter-1: lighten(spin(@green1, 5), 10%);
+@green1_lighter-2: lighten(spin(@green1, 10), 20%);
+@green1_darker-1: darken(spin(@green1, -5), 10%);
+@green1_darker-2: darken(spin(@green1, -10), 20%);
+@green_link: lighten(@green1, 60%);
+@linkColor: @green1_lighter-1;
+@navbarBackground: @green1;
+@navbarBackgroundHighlight:@green1_lighter-2;
 @navbarLinkColor: @white;
 
-@navbarLinkColorHover: @infoBackground;
+//@navbarLinkColorHover: @infoBackground;
+@navbarLinkColorHover: @green_link;
 @navbarText: @white;
 /*
 .brand {
