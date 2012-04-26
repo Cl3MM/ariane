@@ -1,11 +1,9 @@
-<%# css 'jquery.ad-gallery.css' %>
-<%# javascript "/assets/galleria-1.2.7.min.js", "/assets/themes/classic/galleria.classic.min.js", "/assets/galleria.js"  %>
-<%# javascript "/assets/themes/classic/galleria.classic.js" %>
-<%# javascript 'ad_gallery.js', 'jquery.ad-gallery.js', 'jquery.ad-gallery.pack.js' %>
-
-<%= stylesheet_link_tag 'themes/classic/galleria.classic.css' %>
-<%= javascript_include_tag "galleria-1.2.7.min.js", "themes/classic/galleria.classic.min.js", "galleria.js"  %>
-<%= javascript_include_tag "themes/classic/galleria.classic.js" %>
+<% css 'jquery.ad-gallery.css' %>
+<% css 'themes/classic/galleria.classic.css' %>
+<% javascript 'ad_gallery.js', 'jquery.ad-gallery.js' %>
+<%# javascript 'jquery.ad-gallery.pack.js' %>
+<% javascript "galleria-1.2.7.min.js", "themes/classic/galleria.classic.min.js", "galleria.js"  %>
+<% javascript "themes/classic/galleria.classic.js" %>
 
 <div class="central-nav">
   <ul class="nav nav-pills">
@@ -35,8 +33,9 @@
     <% end -%>
   </div>
 <% end -%>
-<div>
-<!--
+  <br />
+  <br />
+  <br />
 <div id="gallery" class="ad-gallery">
   <div class="ad-image-wrapper">
   </div>
@@ -47,7 +46,7 @@
       <ul class="ad-thumb-list">
         <% @photos.each_with_index do |photo, index| %>
           <li>
-            <a href="<%= photo.image.url %>">
+            <a href="<%= photo.image.url(:large) %>">
               <%= image_tag photo.image.url(:thumb), :class => "image#{index}",
                 :title => "",
                 :longdesc => "",
@@ -58,5 +57,4 @@
       </ul>
     </div>
   </div>
--->
 </div>
