@@ -47,7 +47,7 @@ Ariane::Application.configure do
 
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
   ## config.assets.precompile += %w( search.js /assets/galleria-1.2.7.min.js /assets/themes/classic/galleria.classic.min.js /assets/galleria.js /assets/themes/classic/galleria.classic.js )
-  config.assets.precompile += %w( search.js galleria-1.2.7.min.js galleria.classic.min.js galleria.js galleria.classic.js galleria.classic.css generic.js )
+  config.assets.precompile += %w( search.js galleria-1.2.7.min.js galleria.classic.min.js galleria.js galleria.classic.js galleria.classic.css generic.js galleria.classic.css )
 
 
   # Disable delivery errors, bad email addresses will be ignored
