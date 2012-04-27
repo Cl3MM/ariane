@@ -16,14 +16,12 @@
     return tab[tab.length - 1]
   }
 
-  clean_path('/assets/themes/classic//assets/galleria.classic.css')
-
   /*global jQuery, Galleria */
 
   Galleria.addTheme({
     name: 'classic',
     author: 'Galleria',
-    css: clean_path('<%= asset_path("galleria.classic.css") %>'),
+    css: clean_path('<%= asset_path("themes/classic/galleria.classic.css") %>'),
     defaults: {
       transition: 'slide',
       thumbCrop:  'height',
