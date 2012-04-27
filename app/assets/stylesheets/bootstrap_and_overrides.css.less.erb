@@ -38,12 +38,15 @@ body { padding-top: 60px; }
 @green1: #006633;
 @green1_lighter-1: lighten(spin(@green1, 5), 10%);
 @green1_lighter-2: lighten(spin(@green1, 10), 20%);
-@green1_darker-1: darken(spin(@green1, -5), 10%);
+@green1_darker-1: darken(spin(@green1, -5), 2%);
 @green1_darker-2: darken(spin(@green1, -10), 20%);
-@green_link: lighten(@green1, 60%);
-@linkColor: @green1_lighter-1;
-@navbarBackground: @green1;
-@navbarBackgroundHighlight:@green1_lighter-2;
+
+@green_link: lighten(@green1, 650%);
+@linkColor: lighten(@green1, 2%);
+//@linkColor: @green1_lighter-1;
+
+@navbarBackground: @green1_darker-1;
+@navbarBackgroundHighlight:@green1_lighter-1;
 @navbarLinkColor: @white;
 
 //@navbarLinkColorHover: @infoBackground;
@@ -51,7 +54,7 @@ body { padding-top: 60px; }
 @navbarText: @white;
 /*
 .brand {
-/*  color: darken(@linkColor, 15%) !important; 
+/*  color: darken(@linkColor, 15%) !important;
   font-weight: 900 !important;
 }
 */
