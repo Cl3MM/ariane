@@ -3,9 +3,9 @@
   <h2>
     <%= @model.name %>
     <div class="btn-group pull-right small">
-      <%= link_to "Back to Model list", administration_models_path, :class => 'btn'  %>
-      <%= link_to "Edit model personal infos", edit_administration_model_path(@model), :class => 'btn btn-success' %>
-      <%= link_to t(:delete), administration_model_path(@model), :method => 'delete', :confirm => t(".confirm_model_del", :model => @model.name), :class => 'btn btn-danger' %>
+      <%= link_to raw("<i class='icon-home'></i> Back to Model list"), administration_models_path, :class => 'btn'  %>
+      <%= link_to raw("<i class='icon-edit icon-white'></i> Edit model personal infos"), edit_administration_model_path(@model), :class => 'btn btn-success' %>
+      <%= link_to raw("<i class='icon-trash icon-white'></i> Delete"), administration_model_path(@model), :method => 'delete', :confirm => t(".confirm_model_del", :model => @model.name), :class => 'btn btn-danger' %>
     </div>
   </h2>
 </div>
