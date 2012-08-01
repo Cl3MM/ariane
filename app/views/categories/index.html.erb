@@ -26,7 +26,8 @@
           <%= link_to image_tag("http://placehold.it/119x170", :alt => model.name), model_path(model), :class => "thumbnail width_119" %>
         <% end -%>
         <div class="caption width_119">
-          <p style="text-align: center;"><%= link_to model.name, model_path(model) %></p>
+          <%#<p style="text-align: center;">[>= link_to model.name, model_path(model) <]</p>%>
+          <p style="text-align: center;"><%= model.name %></p>
         </div>
       </li>
     <% end -%>
