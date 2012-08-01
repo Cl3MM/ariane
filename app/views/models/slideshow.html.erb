@@ -1,14 +1,14 @@
 <% css 'jquery.ad-gallery.css' %>
-<% css 'themes/classic/galleria.classic.css' %>
+<%# css 'themes/classic/galleria.classic.css' %>
 
 <% javascript 'ad_gallery.js' %>
 <% javascript 'jquery.ad-gallery.js' %>
 <%# javascript 'jquery.ad-gallery.pack.js' %>
 
-<% javascript "galleria-1.2.7.min.js"  %>
-<% javascript "themes/classic/galleria.classic.js" %>
-<% javascript "themes/classic/galleria.classic.min.js" %>
-<% javascript "galleria.js" %>
+<%# javascript "galleria-1.2.7.min.js"  %>
+<%# javascript "themes/classic/galleria.classic.js" %>
+<%# javascript "themes/classic/galleria.classic.min.js" %>
+<%# javascript "galleria.js" %>
 
 <div class="central-nav">
   <ul class="nav nav-pills">
@@ -30,36 +30,9 @@
     <p>Please try again later, or <%= mail_to "contact@ariane.rw", "contact the administrator" %> if you still encounter this issue.</p>
   </div>
 <% else %>
-  <div id="galleria">
-    <% @photos.each_with_index do |photo, index| %>
-        <a href="<%= photo.image.url(:large) %>">
-          <%= image_tag photo.image.url(:thumb) %>
-        </a>
-    <% end -%>
-  </div>
+  <%= render :partial => 'ad_gallery' %>
+  <br />
+  <br />
+  <br />
+  <%#= render :partial => 'galleria' %>
 <% end -%>
-  <br />
-  <br />
-  <br />
-<div id="gallery" class="ad-gallery">
-  <div class="ad-image-wrapper">
-  </div>
-  <div class="ad-controls">
-  </div>
-  <div class="ad-nav">
-    <div class="ad-thumbs">
-      <ul class="ad-thumb-list">
-        <% @photos.each_with_index do |photo, index| %>
-          <li>
-            <a href="<%= photo.image.url(:large) %>">
-              <%= image_tag photo.image.url(:thumb), :class => "image#{index}",
-                :title => "",
-                :longdesc => "",
-                :alt => "" %>
-            </a>
-          </li>
-        <% end -%>
-      </ul>
-    </div>
-  </div>
-</div>
