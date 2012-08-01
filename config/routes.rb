@@ -1,10 +1,10 @@
 Ariane::Application.routes.draw do
 
-  Mercury::Engine.routes
+  #Mercury::Engine.routes
 
-  get "slideshow/show"
+  #get "slideshow/show"
 
-  get "slideshow/index"
+  #get "slideshow/index"
 
   namespace :administration do
     resources :colors
