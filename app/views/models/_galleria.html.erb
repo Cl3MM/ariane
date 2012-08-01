@@ -1,0 +1,8 @@
+<div id="galleria">
+  <% @photos.each_with_index do |photo, index| %>
+    <a href="<%= photo.image.url(:large) %>">
+      <%= image_tag photo.image.url(:thumb) %>
+    </a>
+  <% end -%>
+</div>
+

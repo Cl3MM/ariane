@@ -1,0 +1,22 @@
+<div id="gallery" class="ad-gallery">
+  <div class="ad-image-wrapper">
+  </div>
+  <div class="ad-controls">
+  </div>
+  <div class="ad-nav">
+    <div class="ad-thumbs">
+      <ul class="ad-thumb-list">
+        <% @photos.each_with_index do |photo, index| %>
+          <li>
+            <a href="<%= photo.image.url(:large) %>">
+              <%= image_tag photo.image.url(:thumb), :class => "image#{index}",
+                :title => "",
+                :longdesc => "",
+                :alt => "" %>
+            </a>
+          </li>
+        <% end -%>
+      </ul>
+    </div>
+  </div>
+</div>
