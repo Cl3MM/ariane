@@ -1,7 +1,12 @@
 module ModelsHelper
 
   def model_info model
-    s = "<h3 class=\"center\">#{model.name}:&nbsp;&nbsp;<small>"
+    if current_user
+      s = "<h3 class=\"center\"> #{link_to raw("<i class='icon-edit icon-white'></i> Edit infos"), administration_model_path(model),
+                class: "btn btn-small btn-warning"}&nbsp;&nbsp;#{model.name}:&nbsp;&nbsp;<small>"
+    else
+      s = "<h3 class=\"center\">#{model.name}:&nbsp;&nbsp;<small>"
+    end
 
     collec = [:hair_color_id, :eyes_color_id]
     attributes = [:height, :suit, :neck, :shoe, :waist, :size, :bust, :hips ]
