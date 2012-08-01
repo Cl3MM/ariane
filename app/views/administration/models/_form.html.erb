@@ -1,7 +1,5 @@
 <%= simple_form_for [:administration, @model], :html => { :class => 'form-horizontal', :multipart => true } do |f| %>
   <fieldset>
-    <legend><%= controller.action_name.capitalize %> <%= t ".model" %></legend>
-
     <%= f.input :name %>
     <%#= f.input :category, :collection => Category.all, :prompt => "Choose a category" %>
     <%= f.association :category %>

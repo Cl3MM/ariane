@@ -1,1 +1,7 @@
+<div class="page-header">
+  <h2>
+    <%= controller.action_name.capitalize %> <%= t ".model" %>
+    <%= link_to "Manage Photos", administration_model_path(@model), class: "btn btn-success pull-right" %>
+  </h2>
+</div>
 <%= render :partial => 'form' %>
