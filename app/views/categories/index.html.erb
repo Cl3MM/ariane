@@ -22,7 +22,7 @@
       <li class="span2">
         <% if model.photos.size > 0 %>
           <%= link_to image_tag(model.photos.first.image.url(:cover), :alt => model.photos.first.image_file_name),
-                               slideshow_url(model),
+                               slideshow_path(model),
                                :class => "thumbnail width_119" %>
         <% else %>
           <%= link_to image_tag("http://placehold.it/119x170", :alt => model.name), model_path(model), :class => "thumbnail width_119" %>
