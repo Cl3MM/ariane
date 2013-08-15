@@ -10,7 +10,8 @@ gem 'simple_form'
 gem 'pry', :group => :development
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 
-gem 'thin'
+#gem 'thin'
+gem 'puma'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
