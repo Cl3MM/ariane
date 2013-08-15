@@ -1,14 +1,15 @@
-<% css 'jquery.ad-gallery.css' %>
-<%# css 'themes/classic/galleria.classic.css' %>
+<%# css 'jquery.ad-gallery.css' %>
+<% css 'themes/classic/galleria.classic.css' %>
 
-<% javascript 'ad_gallery.js' %>
-<% javascript 'jquery.ad-gallery.js' %>
-<%# javascript 'jquery.ad-gallery.pack.js' %>
+<%# javascript 'ad_gallery.js' %>
+<%# javascript 'jquery.ad-gallery.js' %>
 
-<%# javascript "galleria-1.2.7.min.js"  %>
-<%# javascript "themes/classic/galleria.classic.js" %>
-<%# javascript "themes/classic/galleria.classic.min.js" %>
-<%# javascript "galleria.js" %>
+<% javascript 'jquery.ad-gallery.pack.js' %>
+
+<% javascript "galleria-1.2.7.min.js"  %>
+<% javascript "themes/classic/galleria.classic.js" %>
+<% javascript "themes/classic/galleria.classic.min.js" %>
+<% javascript "galleria.js" %>
 
 <div class="central-nav">
   <ul class="nav nav-pills">
@@ -30,9 +31,9 @@
     <p>Please try again later, or <%= mail_to "contact@ariane.rw", "contact the administrator" %> if you still encounter this issue.</p>
   </div>
 <% else %>
-  <%= render :partial => 'ad_gallery' %>
+  <%#= render :partial => 'ad_gallery' %>
   <br />
   <br />
   <br />
-  <%#= render :partial => 'galleria' %>
+  <%= render :partial => 'galleria' %>
 <% end -%>
